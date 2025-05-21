@@ -45,31 +45,20 @@ def get_yuan(year, month, day):
 
 def create_pan(year, month, day, hour):
     """创建奇门盘"""
-    import sys
-    import io
-    
-    # 设置控制台编码为UTF-8
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    
     ganzhi = get_ganzhi(year, month, day, hour)
     jieqi = get_jieqi(year, month, day)
     yuan = get_yuan(year, month, day)
     
-    print("=" * 30)
     print(f"时间：{year}年{month}月{day}日{hour}时")
     print(f"干支：{ganzhi}")
     print(f"节气：{jieqi} {yuan}")
     print("\n奇门遁甲排盘：")
-    print("-" * 30)
-    print("  【八门】")
-    print("  " + " ".join(MEN))
-    print("\n  【九星】")
-    print("  " + " ".join(STAR))
-    print("\n  【八神】")
-    print("  " + " ".join(GOD))
-    print("-" * 30)
+    print("-------------------")
+    print("  八门：", " ".join(MEN))
+    print("  九星：", " ".join(STAR))
+    print("  八神：", " ".join(GOD))
+    print("-------------------")
     print("注：此为简化版排盘，实际排盘需考虑更多因素")
-    print("=" * 30)
 
 if __name__ == "__main__":
     now = datetime.now()
